@@ -54,8 +54,6 @@ CASE_SENSITIVE="true"
 plugins=(git)
 
 # User configuration
-export PATH="/home/conrado/.local/bin:$PATH"
-export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -75,30 +73,23 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-alias zshconfig="gedit ~/.zshrc"
-alias ohmyzsh="gedit ~/.oh-my-zsh/oh-my-zsh.sh"
-
 export NVM_DIR="/home/conrado/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # extra paths
-export PATH=/usr/local/texlive/2016/bin/x86_64-linux:$PATH
-export MANPATH=/usr/local/texlive/2016/texmf-dist/doc/man:$MANPATH
+export PATH=/usr/local/texlive/2016/bin/x86_64-linux:/home/conrado/.local/bin:$PATH
+export MANPATH=/usr/local/texlive/2016/texmf-dist/doc/man:/usr/local/man:$MANPATH
 export INFOPATH=/usr/local/texlive/2016/texmf-dist/doc/info:$INFOPATH
 export OSFONTDIR="$HOME/.fonts;$HOME/.local/share/fonts"
 
-alias ctx='source $HOME/Apps/context/tex/setuptex'
-
-#source $HOME/.config/antigen/bin/antigen.zsh
-#antigen use oh-my-zsh
-
 # Import colorscheme from 'wal'
 (wal -q -t -r &)
+
+# Alias
 alias zzz='systemctl suspend'
+
+alias zshconfig="gedit ~/.zshrc"
+alias ohmyzsh="gedit ~/.oh-my-zsh/oh-my-zsh.sh"
+
+alias ctx='source $HOME/Apps/context/tex/setuptex'
 alias contexthelp='mtxrun --script server --auto'
